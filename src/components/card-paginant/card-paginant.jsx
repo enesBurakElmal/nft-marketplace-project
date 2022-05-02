@@ -85,18 +85,20 @@ const Card = () => {
         <div className="card-container" key={employee.id}>
           <div className="card-list">
             <h1 className="header">{`Card ${employee.id} `}</h1>
-            <a
-              href={`https://duskbreakers.gg/breaker_images/${employee.id}.png`}
-              cursor="pointer"
-              target="_blank"
-            >
-              <img
-                className="card-image"
-                src={`https://duskbreakers.gg/breaker_images/${employee.id}.png`}
-                alt={`Card ${employee.id} asset`}
-                style={{ width: '180px', height: '180px' }}
-              />
-            </a>
+            <Tilt className="br2" options={{ max: 35 }}>
+              <a
+                href={`https://duskbreakers.gg/breaker_images/${employee.id}.png`}
+                cursor="pointer"
+                target="_blank"
+              >
+                <img
+                  className="card-image"
+                  src={`https://duskbreakers.gg/breaker_images/${employee.id}.png`}
+                  alt={`Card ${employee.id} asset`}
+                  style={{ width: '180px', height: '180px' }}
+                />
+              </a>
+            </Tilt>
             <div className="card-text">
               <div className="card-text-left">
                 <p className="card-text-0">{employee.title0}</p>

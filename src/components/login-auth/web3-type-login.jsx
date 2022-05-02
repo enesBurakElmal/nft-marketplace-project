@@ -5,7 +5,6 @@ import { ContractABI } from './erc20-data'
 
 import '../card-buttons/card-buttons.styles.css'
 
-
 function MetaMaskAuth() {
   const [isConnected, setIsConnected] = useState(false)
   const [userInfo, setUserInfo] = useState({})
@@ -130,7 +129,7 @@ function MetaMaskAuth() {
         {!isConnected && (
           <div>
             <button className="card-button-meta" onClick={onConnect}>
-              Web3 Type Login
+              Login with MetaMask
             </button>
           </div>
         )}
@@ -138,7 +137,7 @@ function MetaMaskAuth() {
       {isConnected && (
         <div className="app-wrapper">
           <div className="app-details">
-            <h2>✅ You are connected to metamask.</h2>
+            <h2>✅ You are connected to MetaMask</h2>
             <div className="app-account">
               <span>Account number:</span>
               {userInfo.account}

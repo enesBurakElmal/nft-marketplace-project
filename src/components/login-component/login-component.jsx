@@ -24,9 +24,9 @@ const LoginComponent = () => {
           />
         </Tilt>
         <br />
-        <button className="card-button-meta" onClick={as_}>
+        {/* <button className="card-button-meta" onClick={as_}>
           Firebase Type Login
-        </button>
+        </button> */}
         <br />
         {/* <button className="card-button-meta" onClick={metaMaskAuth2}>
           Ethers Type Login
