@@ -35,7 +35,7 @@ async function as_() {
     const list_ = await updateDoc(_ref, { WalletID: arrayUnion(str_acc) })
 
     console.log('Document written with ID: ', list_)
-    alert('You have succesfully joined to RoboClash WhiteList with ' + acc)
+    alert('You have succesfully joined to --- WhiteList with ' + acc)
   }
 }
 
