@@ -1,0 +1,40 @@
+.card-buttons {
+  margin-bottom: 10px;
+}
+
+.card-button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #3b3b3b;
+  background-color: #3b3b3b;
+  color: #811717;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100px;
+}
+
+.card-button-meta {
+  color: white;
+  height: auto;
+  padding: 10px;
+  font-weight: bold;
+  background-color: #fc7e18;
+  border-color: transparent;
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.card-button-meta:hover {
+  background-color: white;
+  color: #fc7e18;
+  transition: 0.5s;
+}
+.card-button:hover {
+  background-color: rgb(70, 70, 157) !important;
+  color: rgb(255, 255, 255);
+}
