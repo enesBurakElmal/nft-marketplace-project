@@ -94,18 +94,17 @@ const Card = () => {
               style={{ width: '218px', height: '240px' }}
             />
             <div className="card-text">
-              <p className="card-text-creator">
-                Creator:{' '}
-                <span>
-                  <img
-                    src={UserPhoto}
-                    style={{ width: '40px', height: '30px' }}
-                    alt="user-asset"
-                    className="user-asset"
-                  />
-                </span>{' '}
-                {employee.title0}
-              </p>
+              <div className="card-text-creator-div">
+                <p className="card-text-creator">Creator: </p>
+                <img
+                  src={UserPhoto}
+                  style={{ width: '40px', height: '30px' }}
+                  alt="user-asset"
+                  className="user-asset"
+                />
+                <p className="card-text-creator"> {employee.title0}</p>
+              </div>
+
               <p className="card-text-collection">{employee.title1}</p>
 
               <p className="card-text-coin">

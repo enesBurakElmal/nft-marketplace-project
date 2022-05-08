@@ -57,8 +57,16 @@
   /* max-height: 120px; */
 }
 
+.card-text-creator-div {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  font-size: 16px;
+  /* max-height: 120px; */
+}
+
 .card-text-creator {
-  font-size: 12px;
+  font-size: 14px;
   color: grey;
 }
 
