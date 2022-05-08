@@ -1,7 +1,5 @@
 import React from 'react'
 
-import LoginComponent from './components/login-component/login-component'
-
 import {
   AppContainer,
   DivList,
@@ -15,7 +13,9 @@ import {
 
 import './App.css'
 
+import LoginComponent from './components/login-component/login-component'
 import CardListComponent from './components/card-list/card-list.component'
+import Apps from './components/login-auth/ethers-type-login'
 
 function App() {
   return (
@@ -23,6 +23,7 @@ function App() {
       <AppContainer>
         <LoginComponent />
         <CardListComponent />
+        {/* <Apps /> */}
       </AppContainer>
     </div>
   )

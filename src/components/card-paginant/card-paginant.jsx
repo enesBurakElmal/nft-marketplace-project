@@ -16,6 +16,8 @@ import { ethers } from 'ethers'
 import { daiToken } from '../login-auth/erc20-data.js'
 
 import SECTIONS_DATA from '../card-list/card-list'
+import UserPhoto from '../../assets/card-profile.png'
+import AvaxCoinImg from '../../assets/ava-token.png'
 import { addCard, removeCard } from '../card-list/scripts'
 
 // import MetaMaskAuth from '../login-component/login'
@@ -41,7 +43,6 @@ const Card = () => {
   const [currentPage, setCurrentPage] = useState(0)
   const [employees] = useState(SECTIONS_DATA)
   const [page, setPage] = useState(0)
-  const [onPageEmployees, setOnPageEmployees] = useState([])
 
   const handlePageClick = (data) => {
     const selectedPage = data.selected
@@ -63,11 +64,9 @@ const Card = () => {
   const handleRemoveCard = () => {
     removeCard()
     setCurrentPage(currentPage - 1)
-    if (employees.length === 12) {
-      setPage(0)
-    }
-    setOnPageEmployees(employees.slice(page, page + employeesPerPage))
-    console.log(setOnPageEmployees)
+    // if (employees.length === 12) {
+    //   setPage(0)
+    // }
   }
 
   const totalPages = Math.ceil(employees.length / 12)
@@ -85,30 +84,40 @@ const Card = () => {
         <div className="card-container" key={employee.id}>
           <div className="card-list">
             <h1 className="header">{`Card ${employee.id} `}</h1>
-            <Tilt className="br2" options={{ max: 35 }}>
-              <a
-                href={`https://duskbreakers.gg/breaker_images/${employee.id}.png`}
-                cursor="pointer"
-                target="_blank"
-              >
-                <img
-                  className="card-image"
-                  src={`https://duskbreakers.gg/breaker_images/${employee.id}.png`}
-                  alt={`Card ${employee.id} asset`}
-                  style={{ width: '180px', height: '180px' }}
-                />
-              </a>
-            </Tilt>
+            <img
+              className="card-image"
+              src={`https://duskbreakers.gg/breaker_images/${employee.id}.png`}
+              alt={`Card ${employee.id} asset`}
+              style={{ width: '218px', height: '240px' }}
+            />
             <div className="card-text">
-              <div className="card-text-left">
-                <p className="card-text-0">{employee.title0}</p>
-                <p className="card-text-1">{employee.title1}</p>
-              </div>
-              <div className="card-text-right">
-                <p className="card-text-2">{employee.title2}</p>
-                <p className="card-text-3">{employee.title3}</p>
-              </div>
+              <p className="card-text-creator">
+                Creator:{' '}
+                <span>
+                  <img
+                    src={UserPhoto}
+                    style={{ width: '40px', height: '30px' }}
+                    alt="user-asset"
+                    className="user-asset"
+                  />
+                </span>{' '}
+                {employee.title0}
+              </p>
+              <p className="card-text-collection">{employee.title1}</p>
+
+              <p className="card-text-coin">
+                {employee.title2}{' '}
+                <img
+                  src={AvaxCoinImg}
+                  style={{ width: '20px', height: '20px' }}
+                  alt="avax-coin"
+                />
+              </p>
+              <p className="card-text-usd">{employee.title3} </p>
             </div>
+          </div>
+          <div className="card-button-div">
+            <button className="card-buy-button">Buy Now</button>
           </div>
         </div>
       )

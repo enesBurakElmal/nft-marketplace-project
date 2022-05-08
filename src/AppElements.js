@@ -12,11 +12,8 @@ export const AppContainer = styled.div`
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid rgb(255, 255, 255);
-  margin-top: 10rem;
-  background-color: rgb(162, 194, 194);
-  border-radius: 15px;
-  padding: 1rem;
+  // margin-top: 10rem;
+  background-color: white;
 `
 
 export const DivList = styled.div`

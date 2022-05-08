@@ -7,9 +7,35 @@
 } */
 
 .card-container {
-  border: 1px solid rgb(115, 117, 28);
-  padding: 20px;
+  /* padding: 20px; */
   overflow: hidden;
+}
+
+.card-button-div {
+  display: flex;
+  justify-content: center;
+  padding: 3px;
+  background-image: initial;
+}
+
+.card-buy-button {
+  background-color: rgb(152, 192, 217);
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+}
+
+.card-buy-button:hover {
+  background-color: rgb(61, 90, 128);
+  color: white;
 }
 
 .navigationButtons {
@@ -26,7 +52,6 @@
 }
 
 .header {
-  margin-top: auto;
 }
 
 /* display: flex;

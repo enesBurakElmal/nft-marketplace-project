@@ -28,9 +28,9 @@ const LoginComponent = () => {
           Firebase Type Login
         </button> */}
         <br />
-        {/* <button className="card-button-meta" onClick={metaMaskAuth2}>
+        <button className="card-button-meta" onClick={metaMaskAuth2}>
           Ethers Type Login
-        </button> */}
+        </button>
         <MetaMaskAuth />
       </div>
     </div>
