@@ -83,7 +83,10 @@ const Card = () => {
       return (
         <div className="card-container" key={employee.id}>
           <div className="card-list">
-            <h1 className="header">{`Card ${employee.id} `}</h1>
+            <h1
+              className="header"
+              style={{ fontSize: '25px', color: 'gray' }}
+            >{`Card ${employee.id} `}</h1>
             <img
               className="card-image"
               src={`https://duskbreakers.gg/breaker_images/${employee.id}.png`}
