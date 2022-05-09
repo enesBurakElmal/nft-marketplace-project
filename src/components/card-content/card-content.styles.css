@@ -22,6 +22,12 @@
   flex-wrap: wrap;
 }
 
+.delete-icon {
+  color: #f5f5f5;
+  float: right;
+  cursor: pointer;
+}
+
 .card-link {
   text-decoration: none;
   color: black;

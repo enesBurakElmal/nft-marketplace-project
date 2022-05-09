@@ -109,11 +109,11 @@ const Card = () => {
               </p>
               <p className="card-text-usd">{employee.title3} </p>
             </div>
+            <div className="card-button-div">
+              <button className="card-buy-button">Buy Now</button>
+            </div>
           </div>
-          <div className="card-button-div">
-            <button className="card-buy-button">Buy Now</button>
           </div>
-        </div>
       )
     })
 

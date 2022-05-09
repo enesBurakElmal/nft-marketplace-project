@@ -10,6 +10,7 @@ import './navbar-styles.css'
 import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap'
 
 import myEpicNft from '../login-auth/myepicnft.json'
+import { removeNullContent } from '../card-content/card-content'
 
 const TOTAL_MINT_COUNT = 50
 
@@ -112,6 +113,26 @@ const NavbarComponent = () => {
     }
   }
 
+  const walletInfo = async () => {
+    const { ethereum } = window
+
+    if (ethereum) {
+      const provider = new ethers.providers.Web3Provider(ethereum)
+      const signer = provider.getSigner()
+      const connectedContract = new ethers.Contract(
+        CONTRACT_ADDRESS,
+        myEpicNft.abi,
+        signer
+      )
+      const accounts = await ethereum.request({ method: 'eth_accounts' })
+      const account = accounts[0]
+      const balance = await connectedContract.transferFrom(account, account, 1)
+      console.log(balance)
+    } else {
+      console.log("Ethereum object doesn't exist!")
+    }
+  }
+
   const askContractToMintNft = async () => {
     try {
       const { ethereum } = window
@@ -168,18 +189,15 @@ const NavbarComponent = () => {
   )
 
   const renderMintUI = () => (
-    <button
-      // onClick={askContractToMintNft}
-      className="cta-button connect-wallet-button"
-    >
-      My Wallet (Not Ready)
+    <button onClick={walletInfo} className="cta-button connect-wallet-button">
+      Donate
     </button>
   )
 
   return (
     <div className="navbar-container">
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand class="navbar-brand" href="#">
+        <Navbar.Brand className="navbar-brand" href="#">
           <Tilt className="Tilt" options={{ max: 55 }}>
             <img
               src={NavbarLogo}
@@ -189,10 +207,10 @@ const NavbarComponent = () => {
             />
           </Tilt>
         </Navbar.Brand>
-        <Container className="container-navbar">
+        <Container className="container-navbar ">
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"
-            className="navbar-toggle"
+            className="navbar-toggle "
           />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">

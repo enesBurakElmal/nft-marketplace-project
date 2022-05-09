@@ -4,6 +4,13 @@ import Dropdown from 'react-bootstrap/Dropdown'
 
 import './card-content.styles.css'
 
+export const removeNullContent = () => {
+  const contentDiv = document.querySelector('.null-content')
+  if (contentDiv) {
+    contentDiv.parentNode.removeChild(contentDiv)
+  }
+}
+
 const CardContent = () => {
   return (
     <div className="card-content">
@@ -11,6 +18,9 @@ const CardContent = () => {
         {' '}
         &#9827; Null content for UI/UX{' '}
         <span style={{ fontWeight: 'bold' }}> https://randomsitename.io</span>
+        <span onClick={removeNullContent} className="delete-icon">
+          &#10007;
+        </span>
       </div>
       <ul className="card-list-ul">
         <li className="card-list-li">
