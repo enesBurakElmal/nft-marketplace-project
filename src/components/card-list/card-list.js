@@ -13,7 +13,7 @@ const SECTIONS_DATA = [
     imageUrl: 'https://via.placeholder.com/180',
     id: 1,
     title0: 'Span 0',
-    title1: `RoboClash Epic NFT's Series Collection`,
+    title1: `xStartUp Epic NFT's Series Collection`,
     title2: '12.3 AVAX',
     title3: '($10.15)',
   },

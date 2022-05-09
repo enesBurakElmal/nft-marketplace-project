@@ -170,7 +170,7 @@ const NavbarComponent = () => {
       // onClick={askContractToMintNft}
       className="cta-button connect-wallet-button"
     >
-      Not Ready / My Wallet
+      My Wallet (Not Ready)
     </button>
   )
 
