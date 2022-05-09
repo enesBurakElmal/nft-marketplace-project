@@ -15,3 +15,8 @@ code {
 * body {
   box-sizing: border-box;
 }
+* p,
+div,
+span {
+  font-family: 'Inter Var', sans-serif;
+}

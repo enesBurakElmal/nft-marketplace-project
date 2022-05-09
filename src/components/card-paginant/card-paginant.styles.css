@@ -14,7 +14,7 @@
 .card-button-div {
   display: flex;
   justify-content: center;
-  padding: 3px;
+  /* padding: 3px; */
   background-image: initial;
 }
 
@@ -29,7 +29,8 @@
   font-size: 16px;
   cursor: pointer;
   font-weight: bold;
-  width: 100%;
+  width: 90%;
+  max-width: 100%;
 }
 
 .card-buy-button:hover {
@@ -46,8 +47,9 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0;
+  margin-top: 30px;
   margin-left: auto;
+  text-decoration: none;
 }
 
 .header {
@@ -66,9 +68,9 @@ border: 2px solid black; */
   padding: 10px;
   margin: 8px;
   border-radius: 5px;
-  border: 1px solid red;
   color: red;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .navigationButtons a:hover {
@@ -83,7 +85,7 @@ border: 2px solid black; */
 
 .navigationDisabled a {
   color: rgb(127, 63, 63);
-  background-color: grey;
+  /* background-color: grey; */
 }
 
 .user-info {

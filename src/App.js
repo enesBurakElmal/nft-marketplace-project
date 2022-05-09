@@ -25,7 +25,7 @@ function App() {
     <div className="App">
       <NavbarComponent />
       <AppContainer>
-        <LoginComponent />
+        {/* <LoginComponent /> */}
         <CardListComponent />
         {/* <Apps /> */}
       </AppContainer>

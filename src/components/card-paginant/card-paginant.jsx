@@ -126,20 +126,7 @@ const Card = () => {
     })
 
   return (
-    <div>
-      <div className="card-buttons">
-        <button className="card-button" onClick={handleAddCard}>
-          Add Card
-        </button>
-
-        <button className="card-button" onClick={handleRemoveCard}>
-          Delete Card
-        </button>
-
-        <button className="card-button" onClick={ethEnabled}>
-          Debugger
-        </button>
-      </div>
+    <div className="grid-container">
       <div className="card-grid">{displayEmployees} </div>
       <ReactPaginate
         previousLabel={'Previous'}
@@ -158,7 +145,7 @@ const Card = () => {
         disabledClassName={'navigationDisabled'}
         currentPage={currentPage}
       />
-      <div className="card-buttons">
+      {/* <div className="card-buttons">
         <button className="card-button" onClick={handleAddCard}>
           Add Card
         </button>
@@ -169,7 +156,7 @@ const Card = () => {
         <div>
           <button className="card-button"> Debugger</button>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

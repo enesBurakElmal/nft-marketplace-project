@@ -1,6 +1,8 @@
 import { ethers } from 'ethers'
 import React, { useEffect, useState } from 'react'
 
+import NavbarLogo from '../../assets/navbar-logo.png'
+
 import './navbar-styles.css'
 
 import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap'
@@ -159,25 +161,35 @@ const NavbarComponent = () => {
       onClick={connectWallet}
       className="cta-button connect-wallet-button"
     >
-      Connect to Wallet
+      Connect to a Wallet
     </button>
   )
 
   const renderMintUI = () => (
     <button
-      onClick={askContractToMintNft}
+      // onClick={askContractToMintNft}
       className="cta-button connect-wallet-button"
     >
-      Mint NFT
+      Not Ready / My Wallet
     </button>
   )
 
   return (
     <div className="navbar-container">
       <Navbar bg="light" expand="lg">
+        <Navbar.Brand class="navbar-brand" href="#">
+          <img
+            src={NavbarLogo}
+            alt="logo"
+            style={{ width: '60px', height: '45px' }}
+            className="navbar-logo"
+          />
+        </Navbar.Brand>
         <Container className="container-navbar">
-          
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+            className="navbar-toggle"
+          />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="#home">Home</Nav.Link>
@@ -196,7 +208,6 @@ const NavbarComponent = () => {
                 </NavDropdown.Item>
               </NavDropdown>
               <Button className="wallet-connect-button">
-                {' '}
                 {currentAccount === ''
                   ? renderNotConnectedContainer()
                   : renderMintUI()}
