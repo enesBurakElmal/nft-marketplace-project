@@ -27,16 +27,16 @@
   border-radius: 0px;
 }
 
-.navbar-toggle {
+/* .navbar-toggle {
   float: right !important;
   justify-content: flex-end !important;
-}
+} */
 
 .navbar-brand {
   margin-left: 5px;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 990px) {
   .navbar-brand {
     display: none;
   }
@@ -60,7 +60,6 @@
   color: black;
   font-size: 14px;
   font-weight: bold;
-
   cursor: pointer;
   transition: all 0.2s;
   position: fixed;
