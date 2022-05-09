@@ -6,7 +6,7 @@ import Card from '../card-paginant/card-paginant'
 
 import CardContent from '../card-content/card-content'
 
-export const CardListComponent = (itemsPerPage) => {
+export const CardListComponent = () => {
   return (
     <div className="card-body">
       <CardContent />
