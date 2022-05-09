@@ -1,5 +1,4 @@
-import { toBeInTheDocument } from '@testing-library/jest-dom/dist/matchers'
-import styled from 'styled-components'
+  import styled from 'styled-components'
 
 export const AppContainer = styled.div`
   width: 100%;

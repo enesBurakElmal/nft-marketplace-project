@@ -52,6 +52,14 @@
   background: -webkit-linear-gradient(left, #60c657, #35aee2);
   background-size: 200% 200%;
   animation: gradient-animation 4s ease infinite;
+  margin: 0 0;
+  margin-top: 0;
+  padding: 5px;
+}
+
+.wallet-connect-button {
+  padding: 0 0 0 0 !important;
+  margin: 0 0 0 0 !important;
 }
 
 .mint-button {

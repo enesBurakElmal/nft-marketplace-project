@@ -6,6 +6,7 @@ import metaMaskAuth2 from '../login-auth/ethers-type-login'
 import as_ from '../login-auth/firebase-type-login'
 
 import MetamaskLogo from '../../assets/metamask.svg'
+import EthersLoginAuth from '../login-auth/ethers-type-login'
 
 const LoginComponent = () => {
   return (
@@ -28,10 +29,11 @@ const LoginComponent = () => {
           Firebase Type Login
         </button> */}
         <br />
-        <button className="card-button-meta" onClick={metaMaskAuth2}>
+        {/* <button className="card-button-meta" onClick={metaMaskAuth2}>
           Ethers Type Login
-        </button>
-        <MetaMaskAuth />
+        </button> */}
+        {/* <MetaMaskAuth /> */}
+        {/* <EthersLoginAuth /> */}
       </div>
     </div>
   )

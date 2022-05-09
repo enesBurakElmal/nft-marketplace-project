@@ -1,12 +1,11 @@
-import './style.css'
 import { ethers } from 'ethers'
 import React, { useEffect, useState } from 'react'
 
-// import './navbar-styles.css'
+import './navbar-styles.css'
 
 import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap'
 
-import myEpicNft from './myepicnft.json'
+import myEpicNft from '../login-auth/myepicnft.json'
 
 const TOTAL_MINT_COUNT = 50
 
@@ -17,7 +16,7 @@ const CONTRACT_ADDRESS = '0x76768E14f9D04251915724bd06c0628654D08dcc'
 // source2__ https://betterprogramming.pub/build-a-react-component-for-metamask-auth-10b7ecba5c3f
 // php dosya sorulacak
 
-const EthersLoginAuth = () => {
+const NavbarComponent = () => {
   const [currentAccount, setCurrentAccount] = useState('')
 
   const checkIfWalletIsConnected = async () => {
@@ -177,6 +176,7 @@ const EthersLoginAuth = () => {
     <div className="navbar-container">
       <Navbar bg="light" expand="lg">
         <Container className="container-navbar">
+          
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -195,20 +195,12 @@ const EthersLoginAuth = () => {
                   Separated link
                 </NavDropdown.Item>
               </NavDropdown>
-              {/* <ConnectWalletButton /> */}
               <Button className="wallet-connect-button">
                 {' '}
                 {currentAccount === ''
                   ? renderNotConnectedContainer()
                   : renderMintUI()}
               </Button>
-              {/* <Button
-                className="wallet-connect-button"
-                onClick={renderMintUI}
-                // type="submit"
-              >
-                Connect Wallet
-              </Button> */}
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -217,4 +209,4 @@ const EthersLoginAuth = () => {
   )
 }
 
-export default EthersLoginAuth
+export default NavbarComponent
