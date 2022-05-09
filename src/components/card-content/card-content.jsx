@@ -7,7 +7,11 @@ import './card-content.styles.css'
 const CardContent = () => {
   return (
     <div className="card-content">
-      <div className="null-content"> Null content for UI/UX</div>
+      <div className="null-content">
+        {' '}
+        &#9827; Null content for UI/UX{' '}
+        <span style={{ fontWeight: 'bold' }}> https://randomsitename.io</span>
+      </div>
       <ul className="card-list-ul">
         <li className="card-list-li">
           {' '}
