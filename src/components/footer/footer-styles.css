@@ -1,6 +1,7 @@
 .container-footer {
   background-color: #152f4f;
   color: white;
+  overflow: hidden;
 }
 
 .mt-5 {

@@ -1,11 +1,17 @@
 .card-content {
   width: 100%;
-  max-width: 1100px !important;
+  max-width: 1050px !important;
   display: flex;
+
   flex-direction: column;
-  gap: 10px;
   list-style: none;
+  margin: auto;
   /* text-decoration: none; */
+}
+
+.card-content > ul {
+  line-height: 25px;
+  flex: 1;
 }
 
 .null-content {
@@ -13,6 +19,7 @@
   color: white;
   font-size: 11px;
   margin-top: 20px;
+  padding: 5px;
 }
 
 .card-link {
@@ -28,14 +35,15 @@
   list-style: none;
   display: flex;
   flex-direction: row;
-  align-items: end;
+  /* align-items: end; */
   justify-content: flex-end;
+  flex-wrap: wrap;
 }
 
 .card-list-li {
   display: flex;
   flex-direction: row;
-  align-items: end;
+  align-items: stretch;
   justify-content: flex-end;
   padding: 5px;
   margin: 5px;
@@ -48,7 +56,9 @@
 .card-categorys {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 10px;
+  margin: 0 0 5px 0;
 }
 
 .card-category-div {
@@ -76,16 +86,24 @@
   color: black;
   margin: 10px 0;
   border: 1px solid black;
+  border-radius: 0;
+}
+
+.dropdown-toggle::after {
+  margin: auto;
+  margin-left: 5px;
 }
 
 .card-dropdowns-left {
   display: flex;
+  flex-wrap: wrap;
   gap: 15px;
   margin-right: auto;
 }
 
 .card-dropdowns-right {
   display: flex;
+  flex-wrap: wrap;
   align-items: end;
   justify-content: flex-end;
   gap: 15px;

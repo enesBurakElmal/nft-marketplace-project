@@ -13,6 +13,7 @@ export const AppContainer = styled.div`
   margin-right: auto;
   // margin-top: 10rem;
   background-color: white;
+  overflow: hidden;
 `
 
 export const DivList = styled.div`

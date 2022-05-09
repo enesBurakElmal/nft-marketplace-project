@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 
 import NavbarLogo from '../../assets/navbar-logo.png'
 
+import Tilt from 'react-tilt'
+
 import './navbar-styles.css'
 
 import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap'
@@ -178,12 +180,14 @@ const NavbarComponent = () => {
     <div className="navbar-container">
       <Navbar bg="light" expand="lg">
         <Navbar.Brand class="navbar-brand" href="#">
-          <img
-            src={NavbarLogo}
-            alt="logo"
-            style={{ width: '60px', height: '45px' }}
-            className="navbar-logo"
-          />
+          <Tilt className="Tilt" options={{ max: 55 }}>
+            <img
+              src={NavbarLogo}
+              alt="logo"
+              style={{ width: '60px', height: '45px' }}
+              className="navbar-logo"
+            />
+          </Tilt>
         </Navbar.Brand>
         <Container className="container-navbar">
           <Navbar.Toggle
