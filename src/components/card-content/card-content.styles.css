@@ -10,8 +10,7 @@
 }
 
 .card-content > ul {
-  line-height: 25px;
-  flex: 1;
+  /* flex: 1; */
 }
 
 .null-content {
