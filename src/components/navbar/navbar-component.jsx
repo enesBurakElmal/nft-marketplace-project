@@ -207,7 +207,7 @@ const NavbarComponent = () => {
             />
           </Tilt>
         </Navbar.Brand>
-        <Container className="container-navbar ">
+        <Container className="container-navbar">
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"
             className="navbar-toggle "

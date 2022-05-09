@@ -25,7 +25,7 @@
   border-bottom: 1px solid #e6e6e6;
   border-top: 1px solid #e6e6e6;
   border-radius: 0px;
-  display: flex;
+  /* display: flex; */
 }
 
 .navbar-toggle {
@@ -71,10 +71,15 @@
 
 .navbar-text {
   color: white !important;
+  margin-right: auto;
+  position: relative;
 }
 
 .me-auto {
   background-color: white !important;
+  color: white !important;
+  position: absolute;
+  left: 85px;
 }
 
 .container-navbar {
