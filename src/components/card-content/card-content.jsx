@@ -72,7 +72,7 @@ const CardContent = () => {
       <CardDropdowns>
         <CardDropdownLeft>
           <Dropdown className="card-category-dropdown">
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
+            <Dropdown.Toggle id="dropdown-basic">
               All Collections
             </Dropdown.Toggle>
 
@@ -84,7 +84,7 @@ const CardContent = () => {
           </Dropdown>
 
           <Dropdown className="card-category-dropdown">
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
+            <Dropdown.Toggle id="dropdown-basic">
               All Currencies
             </Dropdown.Toggle>
 
@@ -97,9 +97,7 @@ const CardContent = () => {
         </CardDropdownLeft>
         <CardDropdownRight>
           <Dropdown className="card-category-dropdown">
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-              Newest
-            </Dropdown.Toggle>
+            <Dropdown.Toggle id="dropdown-basic">Newest</Dropdown.Toggle>
 
             <Dropdown.Menu>
               <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
@@ -109,9 +107,7 @@ const CardContent = () => {
           </Dropdown>
 
           <Dropdown className="card-category-dropdown">
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-              20
-            </Dropdown.Toggle>
+            <Dropdown.Toggle id="dropdown-basic">20</Dropdown.Toggle>
 
             <Dropdown.Menu>
               <Dropdown.Item href="#/action-1">Action</Dropdown.Item>

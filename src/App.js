@@ -15,9 +15,7 @@ import {
 
 import './App.css'
 
-import LoginComponent from './components/login-component/login-component'
 import CardListComponent from './components/card-list/card-list.component'
-import Apps from './components/login-auth/ethers-type-login'
 import NavbarComponent from './components/navbar/navbar-component'
 import FooterComponent from './components/footer/footer-component'
 
@@ -26,9 +24,7 @@ function App() {
     <div className="App">
       <NavbarComponent />
       <AppContainer>
-        {/* <LoginComponent /> */}
         <CardListComponent />
-        {/* <Apps /> */}
       </AppContainer>
       <FooterComponent />
     </div>
