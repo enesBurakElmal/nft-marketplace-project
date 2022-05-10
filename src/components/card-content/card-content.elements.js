@@ -1,52 +1,42 @@
-.card-content {
+import styled from 'styled-components'
+
+export const CardContentContainer = styled.div`
   width: 100%;
   max-width: 1050px !important;
   display: flex;
-
   flex-direction: column;
   list-style: none;
   margin: auto;
-  /* text-decoration: none; */
-}
+`
 
-.card-content > ul {
-  /* flex: 1; */
-}
-
-.null-content {
+export const NullContent = styled.div`
   background-color: #3d5a80;
   color: white;
   font-size: 11px;
   margin-top: 20px;
   padding: 5px;
   flex-wrap: wrap;
-}
+`
+export const NullContentText = styled.span`
+  font-weight: bold;
+`
 
-.delete-icon {
+export const NullContentDeleteSymbol = styled.span`
   color: #f5f5f5;
   float: right;
   cursor: pointer;
-}
+`
 
-.card-link {
-  text-decoration: none;
-  color: black;
-}
-
-.card-link:hover {
-  color: #000000;
-}
-
-.card-list-ul {
+export const CardListUl = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: row;
   /* align-items: end; */
   justify-content: flex-end;
   flex-wrap: wrap;
-}
-
-.card-list-li {
+  margin: 0;
+`
+export const CardListLi = styled.li`
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -57,70 +47,53 @@
   font-size: 16px;
   font-family: 'Inter Var', sans-serif;
   font-weight: bold;
-}
+`
+export const CardListLink = styled.a`
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
 
-.card-categorys {
+  :hover {
+    color: #000000;
+  }
+`
+
+export const CardCategorys = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 10px;
   margin: 0 0 5px 0;
-}
-
-.card-category-div {
+`
+export const CardCategorysDiv = styled.div`
   padding: 5px 10px;
   color: white;
   background-color: #98c1d9;
   font-size: 14.5px;
   font-family: 'Inter Var', sans-serif;
   font-weight: bold;
-}
+  cursor: pointer;
+  :hover {
+    background-color: #3d5a80;
+  }
+`
 
-.card-category-div:hover {
-  background-color: #3d5a80;
-}
-
-.card-dropdowns {
+export const CardDropdowns = styled.div`
   display: flex;
   flex-wrap: wrap;
-}
+`
 
-#dropdown-basic {
-  display: flex;
-  align-items: start;
-  justify-content: flex-start;
-  background-color: white !important;
-  color: black;
-  margin: 10px 0;
-  border: 1px solid black;
-  border-radius: 0;
-
-
-
-
-  
-}
-
-.dropdown-toggle::after {
-  margin: auto;
-  margin-left: 5px;
-}
-
-.card-dropdowns-left {
+export const CardDropdownLeft = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   margin-right: auto;
-}
+`
 
-.card-dropdowns-right {
+export const CardDropdownRight = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: end;
   justify-content: flex-end;
   gap: 15px;
-}
-
-.card-category-dropdown .show-dropdown {
-  background-color: white !important;
-}
+`

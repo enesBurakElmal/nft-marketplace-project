@@ -4,78 +4,73 @@ import Dropdown from 'react-bootstrap/Dropdown'
 
 import './card-content.styles.css'
 
+import {
+  CardContentContainer,
+  NullContent,
+  NullContentText,
+  NullContentDeleteSymbol,
+  CardListUl,
+  CardListLi,
+  CardListLink,
+  CardCategorys,
+  CardCategorysDiv,
+  CardDropdowns,
+  CardDropdownLeft,
+  CardDropdownRight,
+} from './card-content.elements'
+
 export const removeNullContent = () => {
-  const contentDiv = document.querySelector('.null-content')
-  if (contentDiv) {
-    contentDiv.parentNode.removeChild(contentDiv)
-  }
+  const DeleteNulLContent = document.querySelector('.fWcCFn')
+  DeleteNulLContent.remove()
 }
 
 const CardContent = () => {
   return (
-    <div className="card-content">
-      <div className="null-content">
+    <CardContentContainer>
+      <NullContent>
         {' '}
         &#9827; Null content for UI/UX{' '}
-        <span style={{ fontWeight: 'bold' }}> https://randomsitename.io</span>
-        <span onClick={removeNullContent} className="delete-icon">
+        <NullContentText> https://randomsitename.io</NullContentText>
+        <NullContentDeleteSymbol onClick={removeNullContent}>
           &#10007;
-        </span>
-      </div>
-      <ul className="card-list-ul">
-        <li className="card-list-li">
+        </NullContentDeleteSymbol>
+      </NullContent>
+      <CardListUl>
+        <CardListLi>
           {' '}
-          <a href="#" className="card-link">
-            {' '}
-            NFT Sales{' '}
-          </a>
-        </li>
-        <li className="card-list-li">
+          <CardListLink> NFT Sales </CardListLink>
+        </CardListLi>
+        <CardListLi>
           {' '}
-          <a href="#" className="card-link">
-            {' '}
-            Explorer{' '}
-          </a>
-        </li>
-        <li className="card-list-li">
+          <CardListLink> Explorer </CardListLink>
+        </CardListLi>
+        <CardListLi>
           {' '}
-          <a href="#" className="card-link">
-            {' '}
-            NFT Stake{' '}
-          </a>
-        </li>
-        <li className="card-list-li">
+          <CardListLink> NFT Stake </CardListLink>
+        </CardListLi>
+        <CardListLi>
           {' '}
-          <a href="#" className="card-link">
-            {' '}
-            Profile{' '}
-          </a>
-        </li>
-        <li className="card-list-li">
+          <CardListLink> Profile </CardListLink>
+        </CardListLi>
+        <CardListLi>
           {' '}
-          <a href="#" className="card-link">
-            {' '}
-            Activities{' '}
-          </a>
-        </li>
-        <li className="card-list-li">
+          <CardListLink> Activities </CardListLink>
+        </CardListLi>
+        <CardListLi>
           {' '}
-          <a href="#" className="card-link">
-            {' '}
-            Create NFT{' '}
-          </a>
-        </li>
-      </ul>
-      <div className="card-categorys">
-        <div className="card-category-div"> All </div>
-        <div className="card-category-div"> Art </div>
-        <div className="card-category-div"> Games </div>
-        <div className="card-category-div"> Photography </div>
-        <div className="card-category-div"> Memes </div>
-        <div className="card-category-div"> NSFW </div>
-      </div>
-      <div className="card-dropdowns">
-        <div className="card-dropdowns-left">
+          <CardListLink> Create NFT </CardListLink>
+        </CardListLi>
+      </CardListUl>
+      <CardCategorys>
+        <CardCategorysDiv> All </CardCategorysDiv>
+        <CardCategorysDiv> Art </CardCategorysDiv>
+        <CardCategorysDiv> Games </CardCategorysDiv>
+        <CardCategorysDiv> Photography </CardCategorysDiv>
+        <CardCategorysDiv> Memes </CardCategorysDiv>
+        <CardCategorysDiv> NSFW </CardCategorysDiv>
+      </CardCategorys>
+      <CardDropdowns>
+        <CardDropdownLeft>
           <Dropdown className="card-category-dropdown">
             <Dropdown.Toggle variant="success" id="dropdown-basic">
               All Collections
@@ -99,8 +94,8 @@ const CardContent = () => {
               <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
-        </div>
-        <div className="card-dropdowns-right">
+        </CardDropdownLeft>
+        <CardDropdownRight>
           <Dropdown className="card-category-dropdown">
             <Dropdown.Toggle variant="success" id="dropdown-basic">
               Newest
@@ -124,9 +119,9 @@ const CardContent = () => {
               <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
-        </div>
-      </div>
-    </div>
+        </CardDropdownRight>
+      </CardDropdowns>
+    </CardContentContainer>
   )
 }
 

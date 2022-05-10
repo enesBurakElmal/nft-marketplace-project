@@ -133,48 +133,6 @@ const NavbarComponent = () => {
     }
   }
 
-  const askContractToMintNft = async () => {
-    try {
-      const { ethereum } = window
-
-      if (ethereum) {
-        const provider = new ethers.providers.Web3Provider(ethereum)
-        const signer = provider.getSigner()
-        const connectedContract = new ethers.Contract(
-          CONTRACT_ADDRESS,
-          myEpicNft.abi,
-          signer
-        )
-
-        console.log('Going to pop wallet now to pay gas...')
-        let nftTxn = await connectedContract.makeAnEpicNFT()
-
-        console.log('Mining...please wait.')
-        await nftTxn.wait()
-        console.log(nftTxn)
-        if (nftTxn.wait) {
-          return (
-            <div>
-              <p>Minting NFT...</p>
-              <p>Please wait...</p>
-              <p>
-                Mined, see transaction: https://rinkeby.etherscan.io/tx/
-                {nftTxn.hash}
-              </p>
-            </div>
-          )
-        }
-        console.log(
-          `Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`
-        )
-      } else {
-        console.log("Ethereum object doesn't exist!")
-      }
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
   useEffect(() => {
     checkIfWalletIsConnected()
   }, [])
@@ -212,6 +170,7 @@ const NavbarComponent = () => {
             aria-controls="basic-navbar-nav"
             className="navbar-toggle "
           />
+
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="#home">Home</Nav.Link>
@@ -229,6 +188,7 @@ const NavbarComponent = () => {
                   Separated link
                 </NavDropdown.Item>
               </NavDropdown>
+
               <Button className="wallet-connect-button">
                 {currentAccount === ''
                   ? renderNotConnectedContainer()
