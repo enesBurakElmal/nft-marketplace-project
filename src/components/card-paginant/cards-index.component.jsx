@@ -17,40 +17,19 @@ class Card extends React.Component {
     this.state = {
       cards: SECTIONS_DATA,
       pageNum: 0,
-      pageCount: 0,
-      pageSize: 12,
       currentPage: 0,
+      pageSize: 12,
       currentCard: {},
-      currentCardIndex: 0,
-      currentCardId: '',
-      currentCardTitle: '',
-      currentCardDescription: '',
-      currentCardImage: '',
     }
-    this.handlePageChange = this.handlePageChange.bind(this)
     this.handlePageClick = this.handlePageClick.bind(this)
+    this.changePage = this.changePage.bind(this)
+    this.displayEmployees = this.displayEmployees.bind(this)
   }
   componentDidMount() {
     const { cards } = this.state
     const pageCount = Math.ceil(cards.length / this.state.pageSize)
     this.setState({ pageCount })
     this.setState({ currentCard: cards[0] })
-    this.setState({ currentCardId: cards[0].id })
-    this.setState({ currentCardTitle: cards[0].title })
-    this.setState({ currentCardDescription: cards[0].description })
-    this.setState({ currentCardImage: cards[0].image })
-    this.setState({ currentCardIndex: 0 })
-  }
-  handlePageChange(data) {
-    const { cards } = this.state
-    const pageNum = data.selected
-    const currentCard = cards[pageNum]
-    this.setState({ currentCard: currentCard })
-    this.setState({ currentCardId: currentCard.id })
-    this.setState({ currentCardTitle: currentCard.title })
-    this.setState({ currentCardDescription: currentCard.description })
-    this.setState({ currentCardImage: currentCard.image })
-    this.setState({ currentCardIndex: pageNum })
   }
 
   handlePageClick = (data) => {
@@ -58,11 +37,12 @@ class Card extends React.Component {
     const offset = selectedPage * this.state.pageSize
     const currentCard = this.state.cards[offset]
     this.setState({ currentCard: currentCard })
-    this.setState({ currentCardId: currentCard.id })
-    this.setState({ currentCardTitle: currentCard.title })
-    this.setState({ currentCardDescription: currentCard.description })
-    this.setState({ currentCardImage: currentCard.image })
-    this.setState({ currentCardIndex: offset })
+  }
+
+  changePage = ({ selected }) => {
+    this.setState({ currentPage: selected })
+    this.setState({ currentCard: this.state.cards[selected] })
+    this.setState({ pageNum: selected })
   }
 
   displayEmployees = () => {
@@ -83,7 +63,7 @@ class Card extends React.Component {
               className="card-image"
               src={`https://duskbreakers.gg/breaker_images/${card.id}.png`}
               alt={`Card ${card.id} asset`}
-              style={{ width: '218px', height: '240px' }}
+              // style={{ width: '218px', height: '240px' }}
             />
             <div className="card-text">
               <div className="card-text-creator-div">
@@ -123,6 +103,7 @@ class Card extends React.Component {
 
     const { handlePageClick } = this
     const { displayEmployees } = this
+    const { changePage } = this
 
     return (
       <div className="grid-container">
@@ -135,7 +116,7 @@ class Card extends React.Component {
           pageCount={pageCount}
           marginPagesDisplayed={2}
           handlePageClick={handlePageClick}
-          selectedPage={currentCardIndex}
+          changePage={changePage}
           pageRangeDisplayed={5}
           subContainerClassName={'pages pagination'}
           activeClassName={'navigationActive'}

@@ -7,6 +7,7 @@ export const CardContentContainer = styled.div`
   flex-direction: column;
   list-style: none;
   margin: auto;
+  margin-top: 50px;
 `
 
 export const NullContent = styled.div`

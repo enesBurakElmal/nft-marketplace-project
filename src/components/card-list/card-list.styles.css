@@ -23,6 +23,23 @@
   justify-items: center;
 }
 
+@media screen and (max-width: 280px) {
+  .card-list {
+    max-width: 85%;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  .card-list {
+    max-width: 75%;
+  }
+}
+@media screen and (max-width: 205px) {
+  .card-list {
+    max-width: 55%;
+  }
+}
+
 .addCard {
   margin-bottom: 10px;
 }
@@ -59,14 +76,12 @@
   text-align: left;
   align-items: center;
   font-size: 16px;
+  flex-wrap: wrap;
 }
 
 .card-text-creator {
   font-size: 14px;
   color: grey;
-}
-
-.user-asset {
 }
 
 .card-text-collection {
