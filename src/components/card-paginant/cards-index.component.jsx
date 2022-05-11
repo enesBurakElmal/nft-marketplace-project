@@ -17,11 +17,13 @@ class Card extends React.Component {
     this.state = {
       cards: SECTIONS_DATA,
       pageNum: 0,
+      page: 0,
       pageSize: 12,
       currentCard: {},
     }
     this.handlePageClick = this.handlePageClick.bind(this)
     this.changePage = this.changePage.bind(this)
+    this.totalPages = this.totalPages.bind(this)
   }
   componentDidMount() {
     const { cards } = this.state
@@ -33,22 +35,28 @@ class Card extends React.Component {
   handlePageClick = (data) => {
     const selectedPage = data.selected
     const offset = selectedPage * this.state.pageSize
-    const currentCard = this.state.cards[offset]
-    this.setState({ currentCard: currentCard })
+    this.setState({ pageNum: selectedPage })
+    this.setState({ currentCard: this.state.cards[offset] })
+  }
+
+  totalPages() {
+    const { cards } = this.state
+    const pageCount = Math.ceil(cards.length / this.state.pageSize)
+    return pageCount
   }
 
   changePage = ({ selected }) => {
-    this.setState({ currentCard: this.state.cards[selected] })
     this.setState({ pageNum: selected })
+    this.setState({ page: selected })
   }
 
   displayEmployees = () => {
     const { cards } = this.state
     const { pageNum, pageSize } = this.state
-
     const start = pageNum * pageSize
     const end = start + pageSize
     const currentCards = cards.slice(start, end)
+
     return currentCards.map((card, index) => {
       return (
         <div className="card-container" key={card.id}>
@@ -61,7 +69,6 @@ class Card extends React.Component {
               className="card-image"
               src={`https://duskbreakers.gg/breaker_images/${card.id}.png`}
               alt={`Card ${card.id} asset`}
-              // style={{ width: '218px', height: '240px' }}
             />
             <div className="card-text">
               <div className="card-text-creator-div">
@@ -97,26 +104,26 @@ class Card extends React.Component {
   }
 
   render() {
-    const { currentCardIndex, pageCount } = this.state
-
     const { handlePageClick } = this
     const { displayEmployees } = this
     const { changePage } = this
+    const totalPages = this.totalPages()
 
     return (
       <div className="grid-container">
         <div className="card-grid"> {displayEmployees()}</div>
 
         <ReactPaginate
-          previousLabel={'Previous'}
-          currentCardIndex={currentCardIndex}
-          nextLabel={'Next'}
-          breakLabel={'...'}
-          pageCount={pageCount}
+          pageCount={totalPages}
+          onPageChange={changePage}
+          currentPage={this.state.pageNum}
           marginPagesDisplayed={2}
           handlePageClick={handlePageClick}
-          changePage={changePage}
+          totalPages={totalPages}
           pageRangeDisplayed={5}
+          previousLabel={'Previous'}
+          nextLabel={'Next'}
+          breakLabel={'...'}
           subContainerClassName={'pages pagination'}
           activeClassName={'navigationActive'}
           containerClassName={'navigationButtons'}
@@ -221,21 +228,21 @@ export default Card
 //     <div className="grid-container">
 //       <div className="card-grid">{displayEmployees} </div>
 //       <ReactPaginate
-//         previousLabel={'Previous'}
-//         nextLabel={'Next'}
-//         breakLabel={'...'}
 //         pageCount={totalPages}
+//         onPageChange={changePage}
+//         currentPage={currentPage}
 //         marginPagesDisplayed={2}
 //         handlePageClick={handlePageClick}
 //         pageRangeDisplayed={5}
+//         previousLabel={'Previous'}
+//         nextLabel={'Next'}
+//         breakLabel={'...'}
 //         subContainerClassName={'pages pagination'}
-//         onPageChange={changePage}
 //         activeClassName={'navigationActive'}
 //         containerClassName={'navigationButtons'}
 //         previousLinkClassName={'previousButton'}
 //         nextLinkClassName={'nextButton'}
 //         disabledClassName={'navigationDisabled'}
-//         currentPage={currentPage}
 //       />
 //       {/* <div className="card-buttons">
 //         <button className="card-button" onClick={handleAddCard}>
