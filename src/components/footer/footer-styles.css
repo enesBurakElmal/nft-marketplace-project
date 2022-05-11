@@ -9,6 +9,10 @@
   color: white;
 }
 
+.col-lg-5 {
+  margin: auto;
+}
+
 ul {
   list-style-type: none;
 }

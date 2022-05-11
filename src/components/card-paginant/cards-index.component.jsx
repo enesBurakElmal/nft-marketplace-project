@@ -17,13 +17,11 @@ class Card extends React.Component {
     this.state = {
       cards: SECTIONS_DATA,
       pageNum: 0,
-      currentPage: 0,
       pageSize: 12,
       currentCard: {},
     }
     this.handlePageClick = this.handlePageClick.bind(this)
     this.changePage = this.changePage.bind(this)
-    this.displayEmployees = this.displayEmployees.bind(this)
   }
   componentDidMount() {
     const { cards } = this.state
@@ -40,7 +38,6 @@ class Card extends React.Component {
   }
 
   changePage = ({ selected }) => {
-    this.setState({ currentPage: selected })
     this.setState({ currentCard: this.state.cards[selected] })
     this.setState({ pageNum: selected })
   }
@@ -48,6 +45,7 @@ class Card extends React.Component {
   displayEmployees = () => {
     const { cards } = this.state
     const { pageNum, pageSize } = this.state
+
     const start = pageNum * pageSize
     const end = start + pageSize
     const currentCards = cards.slice(start, end)
@@ -111,6 +109,7 @@ class Card extends React.Component {
 
         <ReactPaginate
           previousLabel={'Previous'}
+          currentCardIndex={currentCardIndex}
           nextLabel={'Next'}
           breakLabel={'...'}
           pageCount={pageCount}
