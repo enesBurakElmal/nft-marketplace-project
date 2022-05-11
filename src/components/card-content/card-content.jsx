@@ -27,7 +27,7 @@ export const removeNullContent = () => {
 const CardContent = () => {
   return (
     <CardContentContainer>
-      <NullContent>
+      <NullContent className="fWcCFn">
         {' '}
         &#9827; Null content for UI/UX{' '}
         <NullContentText> https://randomsitename.io</NullContentText>
