@@ -39,6 +39,19 @@ class Card extends React.Component {
     this.setState({ currentCard: this.state.cards[offset] })
   }
 
+  handleAddCard = () => {
+    const { cards } = this.state
+    const newCard = {
+      id: cards.length + 1,
+      header: cards.id,
+      creator: '',
+      image: '',
+      collection: '',
+      price: '',
+    }
+    this.setState({ cards: [...cards, newCard] })
+  }
+
   totalPages() {
     const { cards } = this.state
     const pageCount = Math.ceil(cards.length / this.state.pageSize)
@@ -112,7 +125,6 @@ class Card extends React.Component {
     return (
       <div className="grid-container">
         <div className="card-grid"> {displayEmployees()}</div>
-
         <ReactPaginate
           pageCount={totalPages}
           onPageChange={changePage}

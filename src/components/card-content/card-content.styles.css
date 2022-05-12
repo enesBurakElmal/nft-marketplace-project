@@ -21,3 +21,13 @@
   margin: auto;
   margin-left: 5px;
 }
+
+.mobile-dropdown {
+  display: none !important;
+}
+
+@media screen and (max-width: 626px) {
+  .mobile-dropdown {
+    display: flex !important;
+  }
+}

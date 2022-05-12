@@ -48,6 +48,9 @@ export const CardListLi = styled.li`
   font-size: 16px;
   font-family: 'Inter Var', sans-serif;
   font-weight: bold;
+  @media (max-width: 626px) {
+    display: none;
+  }
 `
 export const CardListLink = styled.a`
   text-decoration: none;
@@ -76,6 +79,9 @@ export const CardCategorysDiv = styled.div`
   cursor: pointer;
   :hover {
     background-color: #3d5a80;
+  }
+  @media (max-width: 626px) {
+    display: none;
   }
 `
 

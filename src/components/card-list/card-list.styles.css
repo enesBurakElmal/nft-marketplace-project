@@ -12,6 +12,9 @@
   height: auto;
   padding: 10px 20px;
   background-color: rgb(240, 235, 235);
+  /* --c: goldenrod;
+  border: 0.3em solid var(--c);
+  border-radius: 0.5em; */
 }
 .card-grid {
   width: 100%;

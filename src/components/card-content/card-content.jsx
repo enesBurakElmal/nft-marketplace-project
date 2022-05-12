@@ -60,6 +60,20 @@ const CardContent = () => {
           {' '}
           <CardListLink> Create NFT </CardListLink>
         </CardListLi>
+        <Dropdown className="card-category-dropdown">
+          <Dropdown.Toggle id="dropdown-basic" className="mobile-dropdown">
+            All Categorys Right
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            <Dropdown.Item href="#/action-1">NFT Sales</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Explorer</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">NFT Stake</Dropdown.Item>
+            <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
+            <Dropdown.Item href="#/action-1">Activities</Dropdown.Item>
+            <Dropdown.Item href="#/action-1">Create NFT</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
       </CardListUl>
       <CardCategorys>
         <CardCategorysDiv> All </CardCategorysDiv>
@@ -68,6 +82,20 @@ const CardContent = () => {
         <CardCategorysDiv> Photography </CardCategorysDiv>
         <CardCategorysDiv> Memes </CardCategorysDiv>
         <CardCategorysDiv> NSFW </CardCategorysDiv>
+        <Dropdown className="card-category-dropdown">
+          <Dropdown.Toggle id="dropdown-basic" className="mobile-dropdown">
+            All Categorys Left
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            <Dropdown.Item href="#/action-1">All</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Art</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Games</Dropdown.Item>
+            <Dropdown.Item href="#/action-1">Photography</Dropdown.Item>
+            <Dropdown.Item href="#/action-1">Memes</Dropdown.Item>
+            <Dropdown.Item href="#/action-1">NSFW</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
       </CardCategorys>
       <CardDropdowns>
         <CardDropdownLeft>
