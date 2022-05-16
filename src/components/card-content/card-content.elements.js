@@ -56,7 +56,6 @@ export const CardListLink = styled.a`
   text-decoration: none;
   color: black;
   cursor: pointer;
-
   :hover {
     color: #000000;
   }

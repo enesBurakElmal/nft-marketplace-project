@@ -5,6 +5,8 @@ import SECTIONS_DATA from '../card-list/card-list'
 import UserPhoto from '../../assets/card-profile.png'
 import AvaxCoinImg from '../../assets/ava-token.png'
 
+import DisplayEmployees from './display-employees'
+
 import './card-paginant.styles.css'
 import '../card-list/card-list.styles.css'
 
@@ -64,8 +66,7 @@ class Card extends React.Component {
   }
 
   displayEmployees = () => {
-    const { cards } = this.state
-    const { pageNum, pageSize } = this.state
+    const { pageNum, pageSize, cards } = this.state
     const start = pageNum * pageSize
     const end = start + pageSize
     const currentCards = cards.slice(start, end)
@@ -117,14 +118,21 @@ class Card extends React.Component {
   }
 
   render() {
+    const { pageNum, pageSize, cards } = this.state
     const { handlePageClick } = this
-    const { displayEmployees } = this
     const { changePage } = this
     const totalPages = this.totalPages()
 
     return (
       <div className="grid-container">
-        <div className="card-grid"> {displayEmployees()}</div>
+        <DisplayEmployees
+          cards={cards}
+          pageNum={pageNum}
+          pageSize={pageSize}
+          UserPhoto={UserPhoto}
+          AvaxCoinImg={AvaxCoinImg}
+        />
+        {/* <div className="card-grid"> {displayEmployees()}</div> */}
         <ReactPaginate
           pageCount={totalPages}
           onPageChange={changePage}
