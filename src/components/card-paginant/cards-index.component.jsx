@@ -41,18 +41,18 @@ class Card extends React.Component {
     this.setState({ currentCard: this.state.cards[offset] })
   }
 
-  handleAddCard = () => {
-    const { cards } = this.state
-    const newCard = {
-      id: cards.length + 1,
-      header: cards.id,
-      creator: '',
-      image: '',
-      collection: '',
-      price: '',
-    }
-    this.setState({ cards: [...cards, newCard] })
-  }
+  // handleAddCard = () => {
+  //   const { cards } = this.state
+  //   const newCard = {
+  //     id: cards.length + 1,
+  //     header: cards.id,
+  //     creator: '',
+  //     image: '',
+  //     collection: '',
+  //     price: '',
+  //   }
+  //   this.setState({ cards: [...cards, newCard] })
+  // }
 
   totalPages() {
     const { cards } = this.state
@@ -65,57 +65,57 @@ class Card extends React.Component {
     this.setState({ page: selected })
   }
 
-  displayEmployees = () => {
-    const { pageNum, pageSize, cards } = this.state
-    const start = pageNum * pageSize
-    const end = start + pageSize
-    const currentCards = cards.slice(start, end)
+  // displayEmployees = () => {
+  //   const { pageNum, pageSize, cards } = this.state
+  //   const start = pageNum * pageSize
+  //   const end = start + pageSize
+  //   const currentCards = cards.slice(start, end)
 
-    return currentCards.map((card, index) => {
-      return (
-        <div className="card-container" key={card.id}>
-          <div className="card-list">
-            <h1
-              className="header"
-              style={{ fontSize: '25px', color: 'gray' }}
-            >{`Card ${card.id} `}</h1>
-            <img
-              className="card-image"
-              src={`https://duskbreakers.gg/breaker_images/${card.id}.png`}
-              alt={`Card ${card.id} asset`}
-            />
-            <div className="card-text">
-              <div className="card-text-creator-div">
-                <p className="card-text-creator">Creator: </p>
-                <img
-                  src={UserPhoto}
-                  style={{ width: '40px', height: '30px' }}
-                  alt="user-asset"
-                  className="user-asset"
-                />
-                <p className="card-text-creator"> {card.title0}</p>
-              </div>
+  //   return currentCards.map((card, index) => {
+  //     return (
+  //       <div className="card-container" key={card.id}>
+  //         <div className="card-list">
+  //           <h1
+  //             className="header"
+  //             style={{ fontSize: '25px', color: 'gray' }}
+  //           >{`Card ${card.id} `}</h1>
+  //           <img
+  //             className="card-image"
+  //             src={`https://duskbreakers.gg/breaker_images/${card.id}.png`}
+  //             alt={`Card ${card.id} asset`}
+  //           />
+  //           <div className="card-text">
+  //             <div className="card-text-creator-div">
+  //               <p className="card-text-creator">Creator: </p>
+  //               <img
+  //                 src={UserPhoto}
+  //                 style={{ width: '40px', height: '30px' }}
+  //                 alt="user-asset"
+  //                 className="user-asset"
+  //               />
+  //               <p className="card-text-creator"> {card.title0}</p>
+  //             </div>
 
-              <p className="card-text-collection">{card.title1}</p>
+  //             <p className="card-text-collection">{card.title1}</p>
 
-              <p className="card-text-coin">
-                {card.title2}{' '}
-                <img
-                  src={AvaxCoinImg}
-                  style={{ width: '20px', height: '20px' }}
-                  alt="avax-coin"
-                />
-              </p>
-              <p className="card-text-usd">{card.title3} </p>
-            </div>
-            <div className="card-button-div">
-              <button className="card-buy-button">Buy Now</button>
-            </div>
-          </div>
-        </div>
-      )
-    })
-  }
+  //             <p className="card-text-coin">
+  //               {card.title2}{' '}
+  //               <img
+  //                 src={AvaxCoinImg}
+  //                 style={{ width: '20px', height: '20px' }}
+  //                 alt="avax-coin"
+  //               />
+  //             </p>
+  //             <p className="card-text-usd">{card.title3} </p>
+  //           </div>
+  //           <div className="card-button-div">
+  //             <button className="card-buy-button">Buy Now</button>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     )
+  //   })
+  // }
 
   render() {
     const { pageNum, pageSize, cards } = this.state

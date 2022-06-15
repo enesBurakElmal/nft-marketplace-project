@@ -1,3 +1,4 @@
+import { ConstructorFragment } from 'ethers/lib/utils'
 import styled from 'styled-components'
 
 export const CardContentContainer = styled.div`
@@ -32,7 +33,6 @@ export const CardListUl = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: row;
-  /* align-items: end; */
   justify-content: flex-end;
   flex-wrap: wrap;
   margin: 0;
@@ -103,3 +103,4 @@ export const CardDropdownRight = styled.div`
   justify-content: flex-end;
   gap: 15px;
 `
+
